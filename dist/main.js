@@ -1,0 +1,1 @@
+document.body.appendChild(function(e="hellow webpack"){const n=document.createElement("div");return n.innerText=e,n}());

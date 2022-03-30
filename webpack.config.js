@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
 module.exports = {
   mode: 'development',
@@ -9,7 +9,8 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
   },
   module: {
     rules: [
@@ -31,6 +32,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'learn webpack'
     }),
-    new CleanWebpackPlugin()
+    // new CleanWebpackPlugin()
   ]
 }

@@ -8,8 +8,9 @@ module.exports = {
     duplicate: './duplicate.js'  // 多入口
   },
   output: { //输出文件
-    filename: '[name].js', // 输出的文件名称
+    filename: '[name]-[hash:8].js', // 输出的文件名称
     path: path.resolve(__dirname, 'dist'), // 输出的文件路径
+    publicPath: '/', // wenpack-dev-middleware  使用的路径
     clean: true // 输出之前 先删除原有文件
   },
   devtool: 'inline-source-map', // 源代码映射关系

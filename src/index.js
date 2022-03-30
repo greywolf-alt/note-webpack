@@ -1,3 +1,4 @@
+import'./css/index.css'
 function createDom(text = 'hellow webpack') {
   const div = document.createElement("div")
   div.innerText = text

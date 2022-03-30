@@ -5,7 +5,7 @@ function createDom(text = 'hellow webpack') {
   div.innerText = text
   return div
 }
-const img = document.createElement(img)
+const img = document.createElement('img')
 img.src = head
 document.body.appendChild(createDom())
 document.body.appendChild(img)

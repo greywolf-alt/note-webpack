@@ -5,4 +5,4 @@ img.style.width = '200px'
 img.src = head
 document.body.appendChild(createDom())
 document.body.appendChild(img)
-console.log('i am going ')
+console.log('i am going in webpack-dev-middleware ')

@@ -1,4 +1,4 @@
-import'./css/index.css'
+import './css/index.css'
 import head from './assets/header.png'
 function createDom(text = 'hellow webpack') {
   const div = document.createElement("div")
@@ -6,6 +6,7 @@ function createDom(text = 'hellow webpack') {
   return div
 }
 const img = document.createElement('img')
+img.style.width = '200px'
 img.src = head
 document.body.appendChild(createDom())
 document.body.appendChild(img)

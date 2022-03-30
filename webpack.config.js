@@ -7,6 +7,7 @@ module.exports = {
     index: './main.js',
     duplicate: './duplicate.js'  // 多入口
   },
+  devtool: 'inline-source-map', 
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),

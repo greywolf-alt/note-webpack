@@ -1,10 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
 module.exports = {
   mode: 'development',
-  entry: './main.js',
+  entry: {
+    index: './main.js',
+    duplicate: './duplicate.js'  // 多入口
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -26,6 +30,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'learn webpack'
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 }

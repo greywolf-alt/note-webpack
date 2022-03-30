@@ -1,2 +1,3 @@
-import main from './src/index.ts'
-console.log('i am running', main)
+// import main from './src/index.ts'
+// console.log('i am running', main)
+console.log('i am going ')

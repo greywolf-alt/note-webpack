@@ -1,7 +1,7 @@
 import './css/index.css'
 const head = require('./assets/header.png')
 console.log(head)
-function createDom(text) {
+function createDom(text: string = 'hellow webpack') {
   const div = document.createElement("div")
   div.innerText = text
   return div
@@ -9,5 +9,5 @@ function createDom(text) {
 const img = document.createElement('img')
 img.style.width = '200px'
 img.src = head
-document.body.appendChild(createDom('hellow'))
+document.body.appendChild(createDom())
 document.body.appendChild(img)

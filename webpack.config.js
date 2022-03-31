@@ -41,7 +41,10 @@ module.exports = {
     ]
   },
   optimization: {
-    runtimeChunk: 'single'
+    // runtimeChunk: 'single',
+    splitChunks: { //将公共的模块提取到一个新的打包文件中
+      chunks: 'all'
+    }
   },
   // 解析规则
   resolve: {

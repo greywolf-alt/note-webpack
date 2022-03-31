@@ -6,13 +6,13 @@ module.exports = {
   entry: { // 配置入口
     main: {
       import: './main.js',
-      dependOn: 'shared'
+      // dependOn: 'shared'
     },
     // duplicate: {
     //   import: './duplicate.js',
     //   dependOn: 'shared'
     // },  // 多入口
-    shared: 'lodash', // 公共的模块  与上面 entry.XX.depenOn 对应
+    // shared: 'lodash', // 公共的模块  与上面 entry.XX.depenOn 对应
   },
   output: { //输出文件
     filename: '[name].[contenthash].js', // 输出的文件名称

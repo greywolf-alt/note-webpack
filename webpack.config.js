@@ -28,20 +28,23 @@ module.exports = {
     rules: [ //打包模块使用的规则
       {
         test: /.css$/i,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
+        include: path.resolve(__dirname, 'src')
       }, {
 
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        include: path.resolve(__dirname, 'src')
       }, {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        include: path.resolve(__dirname, 'src')
+
       }
     ]
   },
   optimization: {
-    // runtimeChunk: 'single',
+    runtimeChunk: 'single',
     splitChunks: { //将公共的模块提取到一个新的打包文件中
       chunks: 'all'
     }

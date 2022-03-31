@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/greywolf-alt/note-webpack#readme",
   "dependencies": {
+    "loadsh": "0.0.4",
     "ts-loader": "^9.2.8"
   },
   "devDependencies": {

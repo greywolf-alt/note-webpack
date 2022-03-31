@@ -1,4 +1,4 @@
-import { createDom } from './src/index.ts'
+import { createDom } from './src/index.ts' 
 const head = require('./src/assets/header.png')
 const img = document.createElement('img')
 img.style.width = '200px'

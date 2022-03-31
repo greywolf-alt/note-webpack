@@ -18,9 +18,12 @@ module.exports = {
     filename: '[name].[contenthash].js', // 输出的文件名称
     path: path.resolve(__dirname, 'docs'), // 输出的文件路径
     // publicPath: '/', // wenpack-dev-middleware  使用的路径 引入的根路径
-    clean: true // 输出之前 先删除原有文件
+    clean: true, // 输出之前 先删除原有文件
+    pathinfo: false, //  不输出路径关系
   },
   devtool: 'inline-source-map', // 源代码映射关系
+  // devtool: 'cheap-source-map',
+  // devtool: 'eval-cheap-module-source-map',
   devServer: {  // 配置webpack-dev-server
     static: './docs'
   },
@@ -31,15 +34,20 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
         include: path.resolve(__dirname, 'src')
       }, {
-
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         include: path.resolve(__dirname, 'src')
       }, {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {//增加 webpack 打包速度  这样会关闭 ts 的类型检查  如果需要重新打开 可以配置 ForkTsCheckerWebapckPlugin
+              transpileOnly: true,
+            }
+          }
+        ],
         include: path.resolve(__dirname, 'src')
-
       }
     ]
   },

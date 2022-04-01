@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --env production",
     "start": "webpack serve --open",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "shimming":"webpack --config webpack.shimming.js"
   },
   "repository": {
     "type": "git",

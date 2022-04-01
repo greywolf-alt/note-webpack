@@ -8,6 +8,7 @@ module.exports = merge(common, {
     // ProvidePlugin  当遇到 & 符号的时候 就去 引入并使用 jquery 这个包
     new webpack.ProvidePlugin({
       $: 'jquery'
+      // ajax:['jquery','ajax']
     })
   ]
 })

@@ -3,12 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 module.exports = {
   mode: 'production', // 项目打包环境
-  entry: { // 配置入口
-    shimming:'./src/shimming.js'
-    // main: {
-    //   import: './main.js', //  热模块更新之前的入口文件
-    //   // dependOn: 'shared'
-    // },
+  entry: { // 配置入口 
+    main: {
+      import: './main.js', //  热模块更新之前的入口文件
+      // dependOn: 'shared'
+    },
     // duplicate: {
     //   import: './duplicate.js',
     //   dependOn: 'shared'
@@ -39,18 +38,18 @@ module.exports = {
         type: 'asset/resource',
         include: path.resolve(__dirname, 'src')
       },
-      // {
-      //   test: /\.tsx?$/,
-      //   use: [
-      //     {
-      //       loader: 'ts-loader',
-      //       options: {//增加 webpack 打包速度  这样会关闭 ts 的类型检查  如果需要重新打开 可以配置 ForkTsCheckerWebapckPlugin
-      //         transpileOnly: true,
-      //       }
-      //     }
-      //   ],
-      //   include: path.resolve(__dirname, 'src')
-      // }
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {//增加 webpack 打包速度  这样会关闭 ts 的类型检查  如果需要重新打开 可以配置 ForkTsCheckerWebapckPlugin
+              transpileOnly: true,
+            }
+          }
+        ],
+        include: path.resolve(__dirname, 'src')
+      }
     ]
   },
   // optimization: {

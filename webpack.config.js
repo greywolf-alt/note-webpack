@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
+const WorkboxPlugin = require('workbox-webpack-plugin') //离线缓存
 module.exports = {
   mode: 'production', // 项目打包环境
   entry: { // 配置入口 
@@ -21,12 +22,12 @@ module.exports = {
     clean: true, // 输出之前 先删除原有文件
     pathinfo: false, //  不输出路径关系
   },
-  devtool: 'inline-source-map', // 源代码映射关系
+  // devtool: 'inline-source-map', // 源代码映射关系
   // devtool: 'cheap-source-map',
   // devtool: 'eval-cheap-module-source-map',
-  devServer: {  // 配置webpack-dev-server
-    static: './docs'
-  },
+  // devServer: {  // 配置webpack-dev-server
+  //   static: './docs'
+  // },
   module: { // 打包模块
     rules: [ //打包模块使用的规则
       {
@@ -66,6 +67,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'learn webpack'
     }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
+    })
     // new CleanWebpackPlugin()
   ]
 }

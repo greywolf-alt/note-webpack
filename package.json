@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --env production",
-    "start": "webpack serve --open",
+    "start": "webpack serve",
     "serve": "node server.js",
     "shimming": "webpack --config webpack.shimming.js",
     "server": "http-server dist"
@@ -41,6 +41,7 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-middleware": "^5.3.1",
     "webpack-dev-server": "^4.7.4",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "workbox-webpack-plugin": "^6.5.2"
   }
 }

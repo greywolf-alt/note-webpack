@@ -9,3 +9,14 @@ img.src = head
 document.body.appendChild(createDom())
 document.body.appendChild(img)
 // console.log('i am going in webpack-dev-middleware ')
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered', registration)
+    })
+      .catch(err => {
+        console.log('SW registration faild:', err)
+      })
+  })
+}

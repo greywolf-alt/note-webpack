@@ -8,8 +8,9 @@
     "build": "webpack --env production",
     "start": "webpack serve",
     "serve": "node server.js",
-    "shimming": "webpack --config webpack.shimming.js",
-    "server": "http-server dist"
+    "shimming": "webpack --config ./webpack/webpack.shimming.js",
+    "server": "http-server dist",
+    "assets":"webpack --config ./webpack/webpack.assets.js"
   },
   "repository": {
     "type": "git",

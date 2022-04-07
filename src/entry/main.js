@@ -1,6 +1,6 @@
 import { createDom } from './src/index.ts'
-import(/* webpackPrefetch: true */'./src/js/methods') // webpack 预获取模块
-import(/* webpackPreload: true */ './src/js/common')  //webpack 预加载模块
+import(/* webpackPrefetch: true */'../js/methods') // webpack 预获取模块
+import(/* webpackPreload: true */ '../js/common')  //webpack 预加载模块
 
 const head = require('./src/assets/header.png')
 const img = document.createElement('img')

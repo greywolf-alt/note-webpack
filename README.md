@@ -1,1 +1,1 @@
-这是一个关于webpack的学习笔记
+it's a study note about webpack
